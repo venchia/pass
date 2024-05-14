@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>Batch File to Web Code Conversion</title>
+    <style>
+        label {
+            font-size: 50px;
+        }
+        
+        input[type="text"] {
+            font-size: 50px;
+            padding: 25px;
+        }
+        
+        button {
+            font-size: 100px;
+            padding: 25px 99px;
+        }
+    </style>
+    <script>
+        function calculatePassword() {
+            var numInput = document.getElementById("numInput");
+            var pwOutput = document.getElementById("pwOutput");
+
+            var num = numInput.value;
+            var pwd = parseInt(num) * 618;
+            var zs = Math.floor(pwd / 1000);
+            var xs = pwd % 1000;
+            var pw = "st*" + zs + "." + xs + "#";
+
+            pwOutput.value = pw;
+        }
+    </script>
+</head>
+<body>
+    <label for="numInput" style="font-size: 50px;">请输入计算机编号：</label>
+    <br>
+    <input type="text" id="numInput" style="font-size: 50px;">
+    <br>
+    <button onclick="calculatePassword()" style="font-size: 100px;">计算密码</button>
+    <br>
+    <label for="pwOutput" style="font-size: 50px;">Administrator2010密码为：</label>
+    <br>
+    <input type="text" id="pwOutput" readonly style="font-size: 50px;">
+</body>
+</html>
